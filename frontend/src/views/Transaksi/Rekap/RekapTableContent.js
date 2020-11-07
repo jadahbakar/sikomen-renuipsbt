@@ -58,9 +58,9 @@ const RekapTableContent = (props) => {
           <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}> {' '} {arrData.dokumen_status_nama} {' '} </td>
           <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}> {' '} {arrData.dokumen_detail_surat_kontraktor} {' '} </td>
           <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}> {' '} {arrData.dokumen_detail_tanggal_surat_kontraktor === '0001-01-01 BC' ? '' : arrData.dokumen_detail_tanggal_surat_kontraktor} {' '} </td>
-          <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}> {' '} {arrData.dokumen_detail_tanggal_surat_diterima_pln === '0001-01-01 BC' ? '' : arrData.dokumen_detail_tanggal_surat_kontraktor} {' '} </td>
+          <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}> {' '} {arrData.dokumen_detail_tanggal_surat_diterima_pln === '0001-01-01 BC' ? '' : arrData.dokumen_detail_tanggal_surat_diterima_pln} {' '} </td>
           <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}> {' '} {arrData.dokumen_detail_nomor_surat_pln} {' '} </td>
-          <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}> {' '} {arrData.dokumen_detail_tanggal_surat_keluar_pln === '0001-01-01 BC' ? '' : arrData.dokumen_detail_tanggal_surat_kontraktor} {' '} </td>
+          <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}> {' '} {arrData.dokumen_detail_tanggal_surat_keluar_pln === '0001-01-01 BC' ? '' : arrData.dokumen_detail_tanggal_surat_keluar_pln} {' '} </td>
           <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}> {' '} {arrData.dokumen_detail_proses_approval} {' '} </td>
           <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>
             {/* <Form onSubmit={handleSubmit(onSubmit)}> */}
