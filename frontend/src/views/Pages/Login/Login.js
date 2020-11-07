@@ -111,9 +111,9 @@ const LeftCard = () => {
 
           <Row style={{ marginTop: '1.5em' }}>
             <Col xs='6' className='text-left'>
-              <Link to='/forgetpassword' className='custom-link'>
+              {/* <Link to='/forgetpassword' className='custom-link'>
                 <span className={`${FontAnchorLupaPassword}`}>Lupa password?</span>
-              </Link>
+              </Link> */}
             </Col>
             {/* <Col xs='6' className='text-right'>
               <Link to='/register' className='custom-link'>

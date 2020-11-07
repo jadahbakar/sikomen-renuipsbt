@@ -1,5 +1,5 @@
 let backendHost
-const apiPort = 8000
+// const apiPort = 8000
 const apiVersion = 'v1'
 // const apiVersion2 = 'v2'
 
@@ -12,9 +12,9 @@ if (hostname !== 'localhost') {
 }
 
 // ------- for Develepment
-const API_ROOT = `${backendHost}:${apiPort}/${apiVersion}`
+// const API_ROOT = `${backendHost}:${apiPort}/${apiVersion}`
 // ------- for Production
-// const API_ROOT = `${backendHost}/api/${apiVersion}`
+const API_ROOT = `${backendHost}/api/${apiVersion}`
 
 export { API_ROOT }
 // export { API_ROOT, API_ROOT2 }
