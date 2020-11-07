@@ -15,9 +15,8 @@ class DefaultFooter extends Component {
     return (
       <>
         <span>
-          <a href='/#'>CoreUI</a>
           {' '}
-&copy; 2020 sikomen-renuipsbt.
+          &copy; 2020 sikomen-renuipsbt.
         </span>
         <span className='ml-auto'>
           Powered by
