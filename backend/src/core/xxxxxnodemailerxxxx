@@ -1,0 +1,56 @@
+import nodemailer from 'nodemailer'
+import theme from 'nodemailer-express-handlebars'
+
+import {
+  APP_ENV,
+  MAIL_HOST,
+  MAIL_PORT,
+  MAIL_USERNAME,
+  MAIL_PASSWORD,
+  MAIL_FROM_ADDRESS,
+  MAIL_FROM_NAME
+} from '../config'
+import logger from './winston'
+
+const transport = nodemailer.createTransport({
+  host: MAIL_HOST,
+  port: MAIL_PORT,
+  secure: APP_ENV === 'production',
+  auth: {
+    user: MAIL_USERNAME,
+    pass: MAIL_PASSWORD
+  },
+  debug: APP_ENV === 'development',
+  logger: APP_ENV === 'development'
+})
+
+transport.use(
+  'compile',
+  theme({
+    viewEngine: {
+      extName: '.handlebars',
+      defaultLayout: 'main',
+      partialsDir: 'storage/views/patials',
+      layoutsDir: 'storage/views/layouts'
+    },
+    viewPath: 'storage/views',
+    extName: '.handlebars'
+  })
+)
+
+export default ({
+  to, subject, template, data
+}) => {
+  transport.sendMail(
+    {
+      from: `"${MAIL_FROM_NAME}" <${MAIL_FROM_ADDRESS}>`,
+      to,
+      subject,
+      template,
+      context: {
+        data
+      }
+    },
+    (err, info) => (err ? logger.error(err) : logger.info(info))
+  )
+}
