@@ -116,16 +116,17 @@ const column = (data) => {
           <AppContext.Consumer>
             {context => (
               <>
-                {context.role === 2 ? (
-                  <>
-                    <Link
-                      to={{
-                        pathname: '/transaksi/rekap',
-                        state: { projectId: value.value }
-                      }} className='btn ghost-light fa fa-table'
-                    />
-                  </>
-                )
+                {context.userRole === '3'
+                  ? (
+                    <>
+                      <Link
+                        to={{
+                          pathname: '/transaksi/rekap',
+                          state: { projectId: value.value }
+                        }} className='btn ghost-light fa fa-table'
+                      />
+                    </>
+                    )
                   : (
                     <>
                       <Link
